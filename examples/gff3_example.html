@@ -19,8 +19,18 @@
 
   <h1>Annotations from GFF files</h1>
 
-  <p>Only </p>
-
+  <p>This example tries to display four features from a GFF3 file, with 4 different feature types.</p>
+  <p>Although all types are acceptable <a href="http://www.sequenceontology.org/so_wiki/index.php/Category:SO:SOFA">SOFA terms</a>,
+    only exon and CDS types are displayed by igv.js.</p>
+  
+<pre>
+##gff-version 3
+chr1    internal        exon    1000    1100    .       +       1       ID=feature_with_type_exon
+chr1    internal        CDS     1100    1200    .       +       1       ID=feature_with_type_CDS
+chr1    internal        contig  1200    1300    .       +       1       ID=feature_with_type_contig
+chr1    internal        gene    1300    1400    .       +       1       ID=feature_with_type_gene
+</pre>
+  
 <div id="igv-div" style="padding-top: 10px;padding-bottom: 10px; border:1px solid lightgray"></div>
 
 <script type="text/javascript">
@@ -30,7 +40,7 @@
         var options =
         {
             genome: "hg19",
-            locus: "chr1:1-2000",
+            locus: "chr1:500-2000",
             tracks: [
 		{
                         type: 'annotation',
